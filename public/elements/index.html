@@ -1373,6 +1373,12 @@ example.com (but not on Github, for example).</p>
 
 
 
+  <script>
+    window.addEventListener("load", (e) => {
+      const lightbox = GLightbox();
+    });
+  </script>
+
 
 <hr>
 <h3 id="gallery">Gallery</h3>
@@ -2574,8 +2580,8 @@ example.com (but not on Github, for example).</p>
     <footer class="bg-theme-light dark:bg-darkmode-theme-light">
   <div class="container">
     <div class="row items-center py-10">
-      
       <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+        
         <a
           class="navbar-brand inline-block"
           href="/">
@@ -2679,8 +2685,6 @@ example.com (but not on Github, for example).</p>
 
         </a>
       </div>
-
-      
       <div class="lg:col-6 mb-8 text-center lg:mb-0">
         <ul>
           
@@ -2690,8 +2694,8 @@ example.com (but not on Github, for example).</p>
                 href="
                   /privacy-policy
                 "
-                class="text-gray-600 dark:text-gray-400 hover:underline">
-                Privacy Policy</a>
+                >Privacy Policy</a
+              >
             </li>
           
             <li class="m-3 inline-block">
@@ -2700,38 +2704,19 @@ example.com (but not on Github, for example).</p>
                 href="
                   /terms-and-conditions
                 "
-                class="text-gray-600 dark:text-gray-400 hover:underline">
-                Terms and Conditions</a>
+                >Terms and Conditions</a
+              >
             </li>
           
         </ul>
       </div>
-
-      
-      <div class="lg:col-3 mb-8 lg:mb-0 lg:text-left">
-        <div
-          style="display: flex; justify-content: space-between; align-items: center; flex-wrap: nowrap;">
+      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+        <ul class="social-icons">
           
-          <div style="margin-right: 40px; flex-shrink: 0;">
-            <p class="font-bold text-gray-700 dark:text-gray-300 mb-1">Email:</p>
-            <a
-              href="mailto:info@iconicrubric.com"
-              class="text-gray-600 dark:text-gray-400 hover:no-underline">
-              info@iconicrubric.com
-            </a>
-          </div>
-
-          
-          <div style="flex-shrink: 0;">
-            <p class="font-bold text-gray-700 dark:text-gray-300 mb-1">Address:</p>
-            <span class="text-gray-600 dark:text-gray-400">Braga, Portugal</span>
-          </div>
-        </div>
+        </ul>
       </div>
     </div>
   </div>
-
-  
   <div class="border-border dark:border-darkmode-border border-t py-7">
     <div class="text-light dark:text-darkmode-light container text-center">
       <p>
@@ -2740,6 +2725,7 @@ example.com (but not on Github, for example).</p>
     </div>
   </div>
 </footer>
+
 
 
     
