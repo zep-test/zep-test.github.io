@@ -1,0 +1,59 @@
+// Variables for colors and spacing
+$primary-color: #007bff;
+$text-color: #333;
+$subtext-color: #555;
+$background-color: #f9f9f9;
+$spacing: 16px;
+
+.why-choose-us-section {
+  padding: 40px;
+  background-color: $background-color;
+
+  h2 {
+    text-align: center;
+    font-size: 28px;
+
+    color: $text-color;
+    margin-bottom: $spacing * 4; // Increased margin for better spacing under the title
+  }
+
+  .why-choose-us-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Two-column layout for larger screens
+    gap: $spacing * 5; // Increased gap between items
+    list-style: none;
+    padding: 0;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr; // Stacks items on smaller screens
+    }
+
+    .why-choose-us-item {
+      display: flex;
+      align-items: flex-start;
+      gap: $spacing;
+
+      .why-choose-us-icon {
+        flex-shrink: 0;
+        font-size: 20px;
+        color: $primary-color;
+        margin-top: 4px;
+      }
+
+      .why-choose-us-content {
+        strong {
+          font-size: 18px;
+          color: $text-color;
+          margin-bottom: 8px; // Slightly increased spacing under the title
+          display: block;
+        }
+
+        p {
+          font-size: 16px;
+          color: $subtext-color;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

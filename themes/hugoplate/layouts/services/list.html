@@ -1,0 +1,82 @@
+{{ define "main" }}
+  <!-- Banner -->
+  {{ with .Params.banner }}
+    <section class="section pt-14">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-7 md:col-9 mb-8 text-center">
+            <h1 class="mb-4 text-h3 lg:text-h1">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="mb-8">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .button }}
+              {{ if .enable }}
+                <a
+                  class="btn btn-primary"
+                  href="{{ .link | absURL }}"
+                  {{ if strings.HasPrefix .link `http` }}
+                    target="_blank" rel="noopener"
+                  {{ end }}>
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+          <div class="col-12">
+            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+
+<!-- Services Section -->
+<section class="services" style="padding: 40px;">
+    <h2 style="text-align: center;">Our Services</h2>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 60px;">
+      {{ range .Params.services }}
+      <div class="service" style="flex: 1; max-width: 300px; text-align: center; padding: 20px;">
+        <i class="fa {{ .icon }}" style="font-size: 40px; color: #007bff;"></i>
+        <h3>{{ .title }}</h3>
+        <p>{{ .content }}</p>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+
+  <section class="why-choose-us-section">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <!-- Section Title -->
+      <h2>Why Choose Us</h2>
+  
+      <!-- Bullet Points -->
+      <ul class="why-choose-us-list">
+        {{ range .Params.why_choose_us }}
+        <li class="why-choose-us-item">
+          <!-- Custom Bullet Icon -->
+          <div class="why-choose-us-icon">•</div>
+  
+          <!-- Content -->
+          <div class="why-choose-us-content">
+            <strong>{{ .title }}</strong>
+            <p>{{ .content }}</p>
+          </div>
+        </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+
+
+<!-- About Section -->
+<section class="about" style="padding: 40px; background-color: #f9f9f9;">
+    <h2 style="text-align: center;">{{ .Params.about.title }}</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto;">{{ .Params.about.content }}</p>
+  </section>
+
+{{ end }}
